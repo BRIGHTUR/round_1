@@ -27,11 +27,11 @@ int main()
 		float height = rbox.size.height;
 		float test = width / height;
 		if (test>0.9&&test<1.1) {
-			drawContours(src, contours, i, Scalar(0, 0, 255), FILLED, 8, hierarchy);
+			drawContours(src, contours, i, Scalar(255, 255, 0), FILLED, 8, hierarchy);
 		}
 	}
 	//¡¾7¡¿ÏÔÊ¾×îºóµÄÂÖÀªÍ¼
-	imshow("ÂÖÀªÍ¼", dstImage);
+	imshow("ÂÖÀªÍ¼", src);
 
 	waitKey(0);
 }
