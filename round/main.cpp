@@ -19,7 +19,7 @@ int main()
 	vector<vector<Point>> contours;
 	vector<Vec4i> hierarchy;
 	findContours(dist, contours, CV_RETR_EXTERNAL, CV_CHAIN_APPROX_NONE);
-	RotatedRect rbox = minAreaRect(contours);
+//	RotatedRect rbox = minAreaRect(contours);
 	for (int i = 0; i < contours.size(); i++)
 	{
 		RotatedRect rbox = minAreaRect(contours[i]);
@@ -27,7 +27,7 @@ int main()
 		float height = rbox.size.height;
 		float test = width / height;
 		if (test>0.9&&test<1.1) {
-			drawContours(src, contours[i], i, Scalar(0, 0, 255), FILLED, 8, hierarchy);
+			drawContours(src, contours, i, Scalar(0, 0, 255), FILLED, 8, hierarchy);
 		}
 	}
 	//【7】显示最后的轮廓图
