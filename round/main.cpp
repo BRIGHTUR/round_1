@@ -26,7 +26,8 @@ int main()
 		float width = rbox.size.width;
 		float height = rbox.size.height;
 		float test = width / height;
-		if (test>0.9&&test<1.1) {
+		float test2 = height*width;
+		if (test>0.9&&test<1.1&&test2>30) {
 			drawContours(src, contours, i, Scalar(255, 255, 0), FILLED, 8, hierarchy);
 		}
 	}
